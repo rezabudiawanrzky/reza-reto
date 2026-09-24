@@ -1200,9 +1200,18 @@
         <div id="giftContent" style="display: none; margin-top: 1.5rem;">
             <div class="gift-card">
                 <div class="gift-bank">BCA</div>
-                <div class="gift-number" id="accountNumber">7035 0129 58</div>
+                <div class="gift-number">7035 0129 58</div>
                 <div class="gift-name">a.n. Reza Budiawan Rizki</div>
-                <button class="btn-copy" onclick="copyAccount()">
+                <button class="btn-copy" onclick="copyAccount('7035012958', this)">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    Salin Nomor Rekening
+                </button>
+            </div>
+            <div class="gift-card" style="margin-top: 1rem;">
+                <div class="gift-bank">BCA</div>
+                <div class="gift-number">8761 047 710</div>
+                <div class="gift-name">a.n. Retno Ayu Setiowati</div>
+                <button class="btn-copy" onclick="copyAccount('8761047710', this)">
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
                     Salin Nomor Rekening
                 </button>
@@ -1329,10 +1338,8 @@
         }
 
         // ==================== COPY ACCOUNT NUMBER ====================
-        function copyAccount() {
-            const accountNumber = '7035012958';
-            navigator.clipboard.writeText(accountNumber).then(() => {
-                const btn = document.querySelector('.btn-copy');
+        function copyAccount(number, btn) {
+            navigator.clipboard.writeText(number).then(() => {
                 btn.classList.add('copied');
                 btn.innerHTML = `
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
